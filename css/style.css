@@ -305,22 +305,27 @@ footer p:nth-child(2){
 	display: flex;
 }
 .social a{
-	width: 75px;
-	height: 75px;
+	width: 105px;
+	height: 45px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background:  #f9004d;
-	border-radius: 50%;
+	border-radius: 30px;
 	margin: 22px 10px;
 	color: white;
 	text-decoration: none;
 	font-size: 20px;
+	padding: 13px 30px;
 }
 .social a:hover{
 	transform: scale(1.3);
 	transition: .3s;
+	background-color: transparent;
+	border: 2px solid #f9004d;
+	cursor: pointer;
 }
+
 .end{
 	position: absolute;
 	color:#f9004d;

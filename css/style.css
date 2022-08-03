@@ -4,13 +4,37 @@
 	font-family: 'Josefin Sans', sans-serif;
 	box-sizing: border-box;
 }
+
+body {
+	background: linear-gradient(-45deg, #ffffff, rgb(58, 58, 62), #000b0b, #081aa2);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+
+		background-position: 0% 50%;
+	}
+}
+
 .hero{
 	height: 100vh;
 	width: 100%;
-	background-image: url(../img/background.jpg);
+	/*background-image: url("https://media1.giphy.com/media/3o7TKnPXPyN5EEkrRu/giphy.gif?cid=790b76118e534b630b2f3904dd01ee628870767955073764&rid=giphy.gif&ct=g");
+	*/
 	background-size: cover;
 	background-position: center;
+	
 }
+
 .arrow-btn {
 	position:fixed;
 	bottom:30px;

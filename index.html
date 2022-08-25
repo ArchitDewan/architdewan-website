@@ -45,8 +45,8 @@
 			<ul>
 	
 				<li><a href="#">Home</a></li>
-				<li><a href="#me">About Me</a></li>
-				<li><a href="mailto: architdewan2006@gmail.com">Contact Me</a></li>
+				<li><a href="#E">About Me</a></li>
+				<li><a href="#con-me">Contact Me</a></li>
 			</ul>
 		</nav>
 		
@@ -61,15 +61,15 @@
 
 	<!----About section start---->
 	
-	<section class="about">
+	<section class="about" id="E">
 		<div class="main">
-			<img data-aos="fade-right" data-aos-duration ="1000"src="img/main-img.jpg">
+			<img id="Me"data-aos="fade-right" data-aos-duration ="1000"src="img/main-img.jpg">
 			<div class="about-text">
-				<h2 id="me" data-aos="fade-up" data-aos-duration ="1000">About Me</h2>
+				<h2 id="mee" data-aos="fade-up" data-aos-duration ="1000">About Me</h2>
 				<h5 data-aos="fade-up" data-aos-duration ="1000">Passionate to be a<span data-aos="fade-up" data-aos-duration ="1000"> developer </span></h5>
 				<p data-aos="fade-up" data-aos-duration ="1000">I am currently a Junior High School Student @ Fletchers Meadow SS. Somethings I love to do in my freetime are to play video-games and code.</p>
-				<a href="mailto: architdewan2006@gmail.com">
-					<button data-aos="fade-up" data-aos-duration ="1000">Contact Me</button>
+				<a href="#con-me">
+					<button id="con-me"data-aos="fade-up" data-aos-duration ="1000">Contact Me</button>
 					
 			</a>
 			</div>
@@ -77,6 +77,76 @@
 	</section>
 
 	<!-----service section start----------->
+	<div class="container">
+		<h1 id="">Connect With Me</h1>
+	</div>
+
+	<script> 
+		function textboxFocus(x) 
+		{  
+			document.getElementById(x).style.color = "#4a43d1";  
+		} 
+		function atextboxFocus(x) 
+		{  
+			document.getElementById(x).style.color = "#4a43d1";  
+		} 
+		function btextboxFocus(x) 
+		{  
+			document.getElementById(x).style.color = "#4a43d1";  
+		} 
+		function ctextboxFocus(x) 
+		{  
+			document.getElementById(x).style.color = "#4a43d1";  
+		} 
+		function dtextboxFocus(x) 
+		{  
+			document.getElementById(x).style.color = "#4a43d1";  
+		} 
+		function etextboxFocus(x) 
+		{  
+			document.getElementById(x).style.color = "#4a43d1";  
+		} 
+		
+		
+	</script>
+
+	<div class="contact-box">
+		<div class="contact-left">
+			<h3>Send your message</h3>
+			<form  action="https://formspree.io/f/xrgdbkqj"method="POST">
+
+				<div class="input-row"> 
+					<div class="input-group">
+						<label>Name</label>
+						<input id="em" type="text" name="Name"placeholder="Name" onclick="textboxFocus(this.id);" onblur="textboxBlur(this.id);" size="40"/>
+					</div>
+					<div class="input-group">
+						<label>Phone</label>
+						<input id="em1" type="text" name="Phone" placeholder="Phone" onclick="atextboxFocus(this.id);" onblur="atextboxBlur(this.id);" size="40"/>
+					</div>
+				</div>
+				<div class="input-row">
+					<div class="input-group">
+						<label>Email</label>
+						<input id="em2" type="text" name="Email" placeholder="Email" onclick="btextboxFocus(this.id);" onblur="btextboxBlur(this.id);" size="40"/>
+					</div>
+					<div class="input-group">
+						<label>Subject</label>
+						<input id="em3" type="text" name="Subject" placeholder="Subject" onclick="ctextboxFocus(this.id);" onblur="ctextboxBlur(this.id);" size="40"/>
+					</div>
+				</div>
+				
+				<label>Message</label>
+				<textarea id="em3" type="text" name="Subject" placeholder="Subject" onclick="ctextboxFocus(this.id);" onblur="ctextboxBlur(this.id);" size="40" name="message" rows="8" placeholder="Your Message" ></textarea>
+				
+				<button type="submit">SEND</button>
+			</form>
+
+		</div>
+		<div class="contact-right">
+			<h3></h3>
+		</div>
+	</div>
 
 	<!------footer start--------->
 	<footer>
@@ -97,6 +167,21 @@
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+  </script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+	function sendEmail(){
+		Email.send({
+
+			SecureToken:"e60c329a-6786-4277-a994-bb8ab6b67ec0",
+			To : 'debesoy893@otodir.com',
+			From : "you@isp.com",
+			Subject : "New Contact Form Enquiry",
+			Body : "And this is the body"
+		}).then(
+		message => alert(message)
+		);
+	}
   </script>
 </body>
 </html>

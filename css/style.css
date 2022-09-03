@@ -4,12 +4,18 @@
 	font-family: 'Josefin Sans', sans-serif;
 	box-sizing: border-box;
 }
+:root {
+	--bg-color: #1a2887;
+	--typewriterSpeed: 4s;
+	--typewriterCharacters: 12;
+  }
 
 body {
-	background: linear-gradient(-45deg, #ffffff, rgb(58, 58, 62), #000b0b, #081aa2);
-	background-size: 400% 400%;
-	animation: gradient 10s ease infinite;
-	height: 100vh;
+	margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  background: var(--bg-color);
 }
 
 .container {
@@ -18,6 +24,88 @@ body {
 	margin: 50px auto;
 
 }
+h1 {
+	font-size: clamp(1rem, 3vw + 1rem, 4rem);
+	position: relative;
+	font-family: "Source Code Pro", monospace;
+	position: relative;
+	width: max-content;
+  }
+
+  h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+h1::before {
+	background: var(--bg-color);
+	-webkit-animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+			animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+  }
+  h1::after {
+	width: 0.125em;
+	background: black;
+	-webkit-animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards, blink 750ms steps(var(--typewriterCharacters)) infinite;
+			animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards, blink 750ms steps(var(--typewriterCharacters)) infinite;
+  }
+  
+.subtitle {
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 2rem;
+	font-weight: 400;
+	opacity: 0;
+	transform: translateY(3rem);
+	-webkit-animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+			animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+  }
+  
+  @-webkit-keyframes typewriter {
+	to {
+	  left: 100%;
+	}
+  }
+  
+  @keyframes typewriter {
+	to {
+	  left: 100%;
+	}
+  }
+  @-webkit-keyframes blink {
+	to {
+	  background: transparent;
+	}
+  }
+  @keyframes blink {
+	to {
+	  background: transparent;
+	}
+  }
+  @-webkit-keyframes fadeInUp {
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  @keyframes fadeInUp {
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  #yt-link {
+	position: absolute;
+	bottom: 2em;
+	width: 100%;
+	color: rgba(0, 0, 0, 0.7);
+  }
+  #yt-link:hover, #yt-link:focus {
+	color: teal;
+  }
 
 .contact-box {
 	background: rgb(255, 255, 255);
@@ -51,14 +139,7 @@ body {
 .input-row .input-group {
 	flex-basis: 45%;
 }
-/* width: 300px;
-	border: none;
-	background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) center bottom 5px /calc(100% - 10px) 2px no-repeat;
-	border-bottom: 1px solid#ccc;
-	outline: none;
-	padding-bottom: 5px;
 
-	*/
 input {
 	width: 300px;
 	border: none;
@@ -70,7 +151,7 @@ input {
 textarea {
 	resize: none;
 	width: 100%;
-	color: #4a43d1;
+	color: #ffffff;
 	background-color: #101010;
 	border: 1px solid #4a43d1;
 	outline: none;
@@ -168,7 +249,7 @@ nav ul li a{
 	text-transform: capitalize;
 }
 nav ul li a:hover{
-	color: #1e00ff;
+	color: #000000;
 	transition: .4s;
 }
 .btn{

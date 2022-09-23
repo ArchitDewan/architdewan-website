@@ -16,9 +16,12 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-
-
+	<meta name="viewport" content="width=device-width, intital-scale=1.0">
+	<style>
+		img {
+			max-width: 100%;
+		}
+		</style>
 </head>
 <body> 
 	<!---Background--->
@@ -60,8 +63,8 @@
 			<img id="Me"data-aos="fade-right" data-aos-duration ="1000"src="img/main-img.jpg">
 			<div class="about-text">
 				<h2 id="mee" data-aos="fade-up" data-aos-duration ="1000">About Me</h2>
-				<h5 data-aos="fade-up" data-aos-duration ="1000">Passionate to be a<span data-aos="fade-up" data-aos-duration ="1000"> developer </span></h5>
-				<p data-aos="fade-up" data-aos-duration ="1000">I am currently a Junior High School Student @ Fletchers Meadow SS. Somethings I love to do in my freetime are to play video-games and code.</p>
+				<h5 id="text2" data-aos="fade-up" data-aos-duration ="1000">Passionate to be a<span data-aos="fade-up"id="text3" data-aos-duration ="1000"> developer </span></h5>
+				<p id="text4" data-aos="fade-up" data-aos-duration ="1000">I am currently a Junior High School Student @ Fletchers Meadow SS. Somethings I love to do in my freetime are to play video-games and code.</p>
 				<a href="#con-me">
 					<button id="con-me"data-aos="fade-up" data-aos-duration ="1000">Contact Me</button>
 					
@@ -107,33 +110,33 @@
 	<div class="contact-box">
 		<div class="contact-left">
 			<h3>Send your message</h3>
-			<form  action="https://formspree.io/f/xrgdbkqj"method="POST" return false;>
+			<form  action="https://formspree.io/f/xrgdbkqj"method="POST" return false; id="myForm">
 
 				<div class="input-row"> 
 					<div class="input-group">
 						<label>Name</label>
-						<input id="em" type="text" name="Name"placeholder="Name" onclick="textboxFocus(this.id);" onblur="textboxBlur(this.id);" size="40"/>
+						<input id="em" type="text" name="Name"placeholder="Name" onclick="textboxFocus(this.id);" onblur="textboxBlur(this.id);" size="40"  autocomplete="off"/>
 					</div>
 					<div class="input-group">
 						<label>Phone</label>
-						<input id="em1" type="text" name="Phone" placeholder="Phone" onclick="atextboxFocus(this.id);" onblur="atextboxBlur(this.id);" size="40"/>
+						<input id="em1" type="text" name="Phone" placeholder="Phone" onclick="atextboxFocus(this.id);" onblur="atextboxBlur(this.id);" size="40" autocomplete="off"/>
 					</div>
 				</div>
 				<div class="input-row">
 					<div class="input-group">
 						<label>Email</label>
-						<input id="em2" type="text" name="Email" placeholder="Email" onclick="btextboxFocus(this.id);" onblur="btextboxBlur(this.id);" size="40"/>
+						<input id="em2" type="text" name="Email" placeholder="Email" onclick="btextboxFocus(this.id);" onblur="btextboxBlur(this.id);" size="40" autocomplete="off"/>
 					</div>
 					<div class="input-group">
 						<label>Subject</label>
-						<input id="em3" type="text" name="Subject" placeholder="Subject" onclick="ctextboxFocus(this.id);" onblur="ctextboxBlur(this.id);" size="40"/>
+						<input id="em3" type="text" name="Subject" placeholder="Subject" onclick="ctextboxFocus(this.id);" onblur="ctextboxBlur(this.id);" size="40" autocomplete="off"/>
 					</div>
 				</div>
 				
-				<label>Message</label>
+				<label id="message">Message</label>
 				<textarea id="em3" type="text" name="Subject" placeholder="Subject" onclick="ctextboxFocus(this.id);" onblur="ctextboxBlur(this.id);" size="40" name="message" rows="8" placeholder="Your Message" ></textarea>
 				
-				<button type="submit">SEND</button>
+				<button id="bton"type="submit">SEND</button>
 			</form>
 
 		</div>
@@ -144,8 +147,8 @@
 
 	<!------footer start--------->
 	<footer>
-		<p data-aos="zoom-in" data-aos-duration>Archit Dewan</p>
-		<p data-aos="zoom-in" data-aos-duration>Take a look at some of my personal projects:</p>
+		<p id="txt1" data-aos="zoom-in" data-aos-duration>Archit Dewan</p>
+		<p id="txt2"data-aos="zoom-in" data-aos-duration>Take a look at some of my personal projects:</p>
 		<div class="social">
 			<a data-aos="zoom-in" data-aos-duration href="https://github.com/ArchitDewan" target="_blank"><i class="Projects"></i data-aos="zoom-in" data-aos-duration>GitHub</a>
 		</div>
@@ -176,6 +179,9 @@
 		message => alert(message)
 		);
 	}
+  </script>
+  <script>
+	var form = document.getElementById("myForm");
   </script>
 </body>
 </html>
